@@ -3,10 +3,12 @@
 #### Integracion mediante el ingreso de facturación a Sistema Tango utilizando xTango
 
 ---
+
 **[Sistema Tango Axoft](http://www.axoft.com/) |**
 **[Documentacion xTango](ftp://ftp.tangosoft.com.ar/manuales/14.11/Gestion/Automatizadores.pdf) |**
 **[Reportar Errores](https://github.com/mescalitog/xTangoFacturas/issues/new) |**
 **[Este Repositorio](https://github.com/mescalitog/xTangoFacturas) |**
+
 ---
 
 
