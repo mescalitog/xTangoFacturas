@@ -1,0 +1,142 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly' rs:updatable='true' rs:UniqueTable='VERSION 2'>
+		<s:AttributeType name='ID_Comp' rs:number='1' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='0' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Talonario' rs:number='2' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='4' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='N_Comp' rs:number='3' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='13' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Fecha_Emision' rs:number='4' rs:write='true'>
+			<s:datatype dt:type='dateTime' rs:dbtype='variantdate' dt:maxLength='16' rs:precision='0' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Cliente' rs:number='5' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='6' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Deposito' rs:number='6' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='2' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cond_Venta' rs:number='7' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='2' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='N_Lista' rs:number='8' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='4' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Vendedor' rs:number='9' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='10' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Transporte' rs:number='10' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='10' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Tipo_Asiento' rs:number='11' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='2' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Genera_Asiento' rs:number='12' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Modelo_Asiento' rs:number='13' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='10' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cant_Hojas' rs:number='14' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='2' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Descarga_Stock' rs:number='15' rs:write='true'>
+			<s:datatype dt:type='boolean' dt:maxLength='2' rs:precision='0' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Talonario_Remi' rs:number='16' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='2' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='N_Remito' rs:number='17' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='13' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Moneda' rs:number='18' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cotizacion' rs:number='19' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='decimal' dt:maxLength='16' rs:scale='4' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cotiz_Leyenda' rs:number='20' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='30' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Bonif_Con_Imp' rs:number='21' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Bonif_Sin_Imp' rs:number='22' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Imp_Intereses' rs:number='23' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Imp_Flete' rs:number='24' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Imp_Exento' rs:number='25' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Imp_Gravado' rs:number='26' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Total_MonCte' rs:number='27' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Total_MonExt' rs:number='28' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Leyenda_1' rs:number='29' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='60' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Leyenda_2' rs:number='30' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='60' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Leyenda_3' rs:number='31' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='60' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Leyenda_4' rs:number='32' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='60' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Leyenda_5' rs:number='33' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='60' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Clasificasion' rs:number='34' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='6' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Dir_Entrega' rs:number='35' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='40' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Codigo_Actividad_Empresa_Afip' rs:number='36' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='5' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Actividad_Comprobante_Afip' rs:number='37' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Tipo_Documento_Pagador_Afip' rs:number='38' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='2' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Numero_Documento_Pagador_Afip' rs:number='39' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Rg_3685_Tipo_Operacion_Ventas' rs:number='40' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+</rs:data>
+</xml>

@@ -1,0 +1,63 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly' rs:updatable='true'>
+		<s:AttributeType name='ID_Comp' rs:number='1' rs:write='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='0' rs:fixedlength='true' rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Articulo' rs:number='2' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='15' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Descripcion' rs:number='3' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='30' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Descrip_Adi' rs:number='4' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Unidad_Medida' rs:number='5' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cantidad' rs:number='6' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='decimal' dt:maxLength='16' rs:scale='2' rs:precision='9' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Unidad_Medida_2' rs:number='7' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cantidad_2' rs:number='8' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='decimal' dt:maxLength='16' rs:scale='2' rs:precision='9' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Porc_Descuento' rs:number='9' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='decimal' dt:maxLength='16' rs:scale='2' rs:precision='5' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Precio_Lista' rs:number='10' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='9' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Precio_Neto' rs:number='11' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='17' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Total_Renglon' rs:number='12' rs:write='true'>
+			<s:datatype dt:type='number' rs:dbtype='currency' dt:maxLength='8' rs:precision='11' rs:fixedlength='true'
+			 rs:maybenull='false'/>
+		</s:AttributeType>
+		<s:AttributeType name='Descarga_Stock' rs:number='13' rs:write='true'>
+			<s:datatype dt:type='boolean' dt:maxLength='2' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Cod_Deposito' rs:number='14' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='2' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Clasificasion' rs:number='15' rs:nullable='true' rs:write='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='6' rs:precision='0' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+</rs:data>
+</xml>
