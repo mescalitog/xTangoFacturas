@@ -14,5 +14,6 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
+	<z:row ID_Comp='1' Concepto='PAGO'/>
 </rs:data>
 </xml>

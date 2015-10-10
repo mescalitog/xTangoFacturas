@@ -331,8 +331,6 @@
             // ChkContado
             // 
             this.ChkContado.AutoSize = true;
-            this.ChkContado.Checked = true;
-            this.ChkContado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkContado.Location = new System.Drawing.Point(127, 3);
             this.ChkContado.Name = "ChkContado";
             this.ChkContado.Size = new System.Drawing.Size(104, 17);

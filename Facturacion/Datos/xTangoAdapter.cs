@@ -172,7 +172,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFacEncabezado = value;
-                _rsFacEncabezado = Commons.ADO_a_ADODB(_dtFacEncabezado);
+                Commons.Update_ADODB_from_ADO(_dtFacEncabezado, ref _rsFacEncabezado);
             }
         }
         public DataTable dtFacRenglones
@@ -181,7 +181,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFacRenglones = value;
-                _rsFacRenglones = Commons.ADO_a_ADODB(_dtFacRenglones);
+                Commons.Update_ADODB_from_ADO(_dtFacRenglones, ref _rsFacRenglones);
             }
         }
         public DataTable dtFacImpuestos
@@ -190,7 +190,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFacImpuestos = value;
-                _rsFacImpuestos = Commons.ADO_a_ADODB(_dtFacImpuestos);
+                Commons.Update_ADODB_from_ADO(_dtFacImpuestos, ref _rsFacImpuestos);
             }
         }
         public DataTable dtFacCuotas
@@ -199,7 +199,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFacCuotas = value;
-                _rsFacCuotas = Commons.ADO_a_ADODB(_dtFacCuotas);
+                Commons.Update_ADODB_from_ADO(_dtFacCuotas, ref _rsFacCuotas);
             }
         }
         public DataTable dtFonEncabezado
@@ -208,7 +208,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFonEncabezado = value;
-                _rsFonEncabezado = Commons.ADO_a_ADODB(_dtFonEncabezado);
+                Commons.Update_ADODB_from_ADO(_dtFonEncabezado, ref _rsFonEncabezado);
             }
         }
         public DataTable dtFonRenglones
@@ -217,7 +217,7 @@ namespace Facturacion.Datos
             set
             {
                 _dtFonRenglones = value;
-                _rsFonRenglones = Commons.ADO_a_ADODB(_dtFonRenglones);
+                Commons.Update_ADODB_from_ADO(_dtFonRenglones, ref _rsFonRenglones);
             }
         }
     }
@@ -299,7 +299,7 @@ namespace Facturacion.Datos
                 resultado = xComprobantes.Add_FacturaContado(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFonEncabezado as object, data.rsFonRenglones as object, defectos, ref reporte);
             }
             else {
-                resultado = xComprobantes.Add_FacturaCtaCorriente(tangoLogOn, data.rsFacEncabezado, data.rsFacRenglones, data.rsFacImpuestos, data.rsFacCuotas, defectos, reporte);
+                resultado = xComprobantes.Add_FacturaCtaCorriente(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFacCuotas as object, defectos, reporte);
             }
             // if (!resultado) { throw new XTangoException("Fallo al agregar facturas"); }
 

@@ -33,8 +33,6 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
-<rs:insert>
 	<z:row ID_Comp='1' Cod_Alicuota='1' Importe='210' Porcentaje='21'/>
-</rs:insert>	
 </rs:data>
 </xml>

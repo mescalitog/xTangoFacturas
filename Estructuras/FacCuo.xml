@@ -19,8 +19,6 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
-<rs:insert>
 	<z:row ID_Comp='1' Fecha_Vto='2015-10-10T00:00:00' Importe='1210'/>
-</rs:insert>	
 </rs:data>
 </xml>

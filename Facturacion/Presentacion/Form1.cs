@@ -240,28 +240,32 @@ namespace Facturacion
         /// </summary>
         /// <param name="Defectos">Toma los valores por default del cliente</param>
         /// <param name="Contado">La factura es una factura de contado</param>
-        private void Add_Facturas(bool Defectos, bool Contado) {
-
-            if (dataTouched)
+        private bool Add_Facturas(bool Defectos, bool Contado) {
+            bool r = false;
+            try
             {
-                facturaData.dtFacEncabezado = DGrFacEnc.DataSource as DataTable;
-                facturaData.dtFacRenglones = DGrFacRen.DataSource as DataTable;
-                facturaData.dtFacImpuestos = DGrFacImp.DataSource as DataTable;
-                facturaData.dtFacCuotas = DGrFacCuo.DataSource as DataTable;
-                facturaData.dtFonEncabezado = DGrFonEnc.DataSource as DataTable;
-                facturaData.dtFonRenglones = DGrFonRen.DataSource as DataTable;
+                if (dataTouched)
+                {
+                    facturaData.dtFacEncabezado = DGrFacEnc.DataSource as DataTable;
+                    facturaData.dtFacRenglones = DGrFacRen.DataSource as DataTable;
+                    facturaData.dtFacImpuestos = DGrFacImp.DataSource as DataTable;
+                    facturaData.dtFacCuotas = DGrFacCuo.DataSource as DataTable;
+                    facturaData.dtFonEncabezado = DGrFonEnc.DataSource as DataTable;
+                    facturaData.dtFonRenglones = DGrFonRen.DataSource as DataTable;
+                }
+
+                ADODB.Recordset report = null;
+                r = xComprobantes.addFacturas(Defectos, Contado, facturaData, out report);
+
+                if (report != null)
+                {
+                    DGrResult.DataSource = Commons.ADODB_a_ADO(report);
+                }
             }
-
-            ADODB.Recordset report = null;
-            xComprobantes.addFacturas(Defectos, Contado, facturaData, out report);
-
-            if (report != null)
-            {
-                DGrResult.DataSource = Commons.ADODB_a_ADO(report);
-            }
-
+            finally
+            { }
+            return r;
         }
-
         #endregion
         public Form1()
         {
@@ -317,7 +321,13 @@ namespace Facturacion
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                Add_Facturas(ChkDefectos.Checked, ChkContado.Checked);
+                bool r = Add_Facturas(ChkDefectos.Checked, ChkContado.Checked);
+                if (!r)
+                {
+                    MessageBox.Show("Los comprobantes NO se agregaron", "Facturacion",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                }
                 SSTabFacturas.SelectedIndex = 6;
             }
             finally

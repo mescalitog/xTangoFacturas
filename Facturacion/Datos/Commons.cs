@@ -14,53 +14,48 @@ namespace Facturacion.Datos
     {
         public static DataTable ADODB_a_ADO(ADODB.Recordset adoRs)
         {
+            string tableName = "adoTable";
+            try
+            {
+                tableName = adoRs.Properties["Unique Table"].Value.ToString();
+            }
+            catch
+            {
+                // No existe el nombre de la tabla. 
+            }
+            tableName = (tableName == "") ? "adoTable" : tableName;
             ADODB.Recordset dummyrs = adoRs.Clone(ADODB.LockTypeEnum.adLockReadOnly);
             OleDbDataAdapter myDA = new OleDbDataAdapter();
             DataSet myDS = new DataSet();
-            myDA.Fill(myDS, dummyrs, "adoTable");
+            myDA.Fill(myDS, dummyrs, tableName);
             dummyrs = null;
             return myDS.Tables[0];
         }
 
-        static public ADODB.Recordset ADO_a_ADODB(DataTable inTable)
+        public static void Update_ADODB_from_ADO(DataTable inTable, ref ADODB.Recordset adoRs)
         {
-            ADODB.Recordset result = new ADODB.Recordset();
-
-            result.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
-
-            ADODB.Fields resultFields = result.Fields;
+            // ADODB.Recordset result = adoRs.Clone(ADODB.LockTypeEnum.adLockOptimistic);
+            ADODB.Fields adoFields = adoRs.Fields;
             System.Data.DataColumnCollection inColumns = inTable.Columns;
-
-            foreach (DataColumn inColumn in inColumns)
+            //Delete
+            adoRs.MoveFirst();
+            while (!adoRs.EOF)
             {
-                resultFields.Append(inColumn.ColumnName
-                    , TranslateType(inColumn.DataType)
-                    , inColumn.MaxLength
-                    , inColumn.AllowDBNull ? ADODB.FieldAttributeEnum.adFldIsNullable :
-                                             ADODB.FieldAttributeEnum.adFldUnspecified
-                    , null);
+                adoRs.Delete();
+                adoRs.MoveNext();
+
             }
-
-            //ADODB.CursorTypeEnum.adOpenDynamic, ADODB.LockTypeEnum.adLockOptimistic, adCmdFile);
-
-            result.Open(System.Reflection.Missing.Value
-                    , System.Reflection.Missing.Value
-                    , ADODB.CursorTypeEnum.adOpenDynamic
-                    , ADODB.LockTypeEnum.adLockOptimistic, 0);
-
+            //Add
             foreach (DataRow dr in inTable.Rows)
             {
-                result.AddNew(System.Reflection.Missing.Value,
-                              System.Reflection.Missing.Value);
+                adoRs.AddNew(System.Reflection.Missing.Value,
+                                System.Reflection.Missing.Value);
 
                 for (int columnIndex = 0; columnIndex < inColumns.Count; columnIndex++)
                 {
-                    resultFields[columnIndex].Value = dr[columnIndex];
+                    adoFields[columnIndex].Value = dr[columnIndex];
                 }
-                result.Update();
             }
-
-            return result;
         }
         public static void saveADORecordset(object record, string filepath)
         {

@@ -32,5 +32,7 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
+	<z:row ID_Comp='1' Cod_Cuenta='1' Debe_Haber='H' Leyenda='0' Importe='1210' Cotizacion='1'/>
+	<z:row ID_Comp='1' Cod_Cuenta='2' Debe_Haber='D' Leyenda='0' Importe='1210' Cotizacion='1'/>
 </rs:data>
 </xml>

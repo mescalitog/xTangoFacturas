@@ -59,9 +59,7 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
-<rs:insert>
 	<z:row ID_Comp='1' Cod_Articulo='0000000033     ' Unidad_Medida='U' Cantidad='10' Cantidad_2='0' Porc_Descuento='0'
-		 Precio_Lista='121' Precio_Neto='100' Total_Renglon='1210'/>
-</rs:insert>		 
+		 Precio_Lista='100' Precio_Neto='100' Total_Renglon='1000'/>
 </rs:data>
 </xml>
