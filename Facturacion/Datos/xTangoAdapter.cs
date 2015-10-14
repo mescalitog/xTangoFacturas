@@ -92,135 +92,14 @@ namespace Facturacion.Datos
     }
 
     class xTangoFacturaData {
-
-        private ADODB.Recordset _rsFacEncabezado;
-        private ADODB.Recordset _rsFacRenglones = null;
-        private ADODB.Recordset _rsFacImpuestos = null;
-        private ADODB.Recordset _rsFacCuotas = null;
-        private ADODB.Recordset _rsFonEncabezado = null;
-        private ADODB.Recordset _rsFonRenglones = null;
-        private DataTable _dtFacEncabezado;
-        private DataTable _dtFacRenglones;
-        private DataTable _dtFacImpuestos;
-        private DataTable _dtFacCuotas;
-        private DataTable _dtFonEncabezado;
-        private DataTable _dtFonRenglones;
-
-        public ADODB.Recordset rsFacEncabezado
-        {
-            get { return _rsFacEncabezado; }
-            set
-            {
-                _rsFacEncabezado = value;
-                _dtFacEncabezado = Commons.ADODB_a_ADO(_rsFacEncabezado);
-            }
-        }
-
-        public ADODB.Recordset rsFacRenglones
-        {
-            get { return _rsFacRenglones; }
-            set
-            {
-                _rsFacRenglones = value;
-                _dtFacRenglones = Commons.ADODB_a_ADO(_rsFacRenglones); 
-            }
-        }
-        public ADODB.Recordset rsFacImpuestos
-        {
-            get { return _rsFacImpuestos; }
-            set
-            {
-                _rsFacImpuestos = value;
-                _dtFacImpuestos = Commons.ADODB_a_ADO(_rsFacImpuestos);
-
-            }
-        }
-        public ADODB.Recordset rsFacCuotas
-        {
-            get { return _rsFacCuotas; }
-            set
-            {
-                _rsFacCuotas = value;
-                _dtFacCuotas = Commons.ADODB_a_ADO(_rsFacCuotas);
-            }
-        }
-        public ADODB.Recordset rsFonEncabezado
-        {
-            get { return _rsFonEncabezado; }
-            set
-            {
-                _rsFonEncabezado = value;
-                _dtFonEncabezado = Commons.ADODB_a_ADO(_rsFonEncabezado);
-            }
-        }
-        public ADODB.Recordset rsFonRenglones
-        {
-            get
-            {
-                return _rsFonRenglones;
-            }
-            set
-            {
-                _rsFonRenglones = value;
-                _dtFonRenglones = Commons.ADODB_a_ADO(_rsFonRenglones);
-            }
-        }
-
-        public DataTable dtFacEncabezado
-        {
-            get { return _dtFacEncabezado; }
-            set
-            {
-                _dtFacEncabezado = value;
-                Commons.Update_ADODB_from_ADO(_dtFacEncabezado, ref _rsFacEncabezado);
-            }
-        }
-        public DataTable dtFacRenglones
-        {
-            get { return _dtFacRenglones; }
-            set
-            {
-                _dtFacRenglones = value;
-                Commons.Update_ADODB_from_ADO(_dtFacRenglones, ref _rsFacRenglones);
-            }
-        }
-        public DataTable dtFacImpuestos
-        {
-            get { return _dtFacImpuestos; }
-            set
-            {
-                _dtFacImpuestos = value;
-                Commons.Update_ADODB_from_ADO(_dtFacImpuestos, ref _rsFacImpuestos);
-            }
-        }
-        public DataTable dtFacCuotas
-        {
-            get { return _dtFacCuotas; }
-            set
-            {
-                _dtFacCuotas = value;
-                Commons.Update_ADODB_from_ADO(_dtFacCuotas, ref _rsFacCuotas);
-            }
-        }
-        public DataTable dtFonEncabezado
-        {
-            get { return _dtFonEncabezado; }
-            set
-            {
-                _dtFonEncabezado = value;
-                Commons.Update_ADODB_from_ADO(_dtFonEncabezado, ref _rsFonEncabezado);
-            }
-        }
-        public DataTable dtFonRenglones
-        {
-            get { return _dtFonRenglones; }
-            set
-            {
-                _dtFonRenglones = value;
-                Commons.Update_ADODB_from_ADO(_dtFonRenglones, ref _rsFonRenglones);
-            }
-        }
+        public ADODB.Recordset rsFacEncabezado { get; set; }
+        public ADODB.Recordset rsFacRenglones { get; set; }
+        public ADODB.Recordset rsFacImpuestos { get; set; }
+        public ADODB.Recordset rsFacCuotas { get; set; }
+        public ADODB.Recordset rsFonEncabezado { get; set; }
+        public ADODB.Recordset rsFonRenglones { get; set; }
     }
+
     class xTangoComprobantes : xTangoAdapter
     {
         /// <summary>

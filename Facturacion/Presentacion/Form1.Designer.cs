@@ -50,23 +50,23 @@
             this.CmdLoadData = new System.Windows.Forms.Button();
             this.SSTabFacturas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.DGrFacEnc = new System.Windows.Forms.DataGridView();
+            this.DGrFacEnc = new Facturacion.ADODBDataGridView();
             this.panelEncOp = new System.Windows.Forms.Panel();
             this.ChkContado = new System.Windows.Forms.CheckBox();
             this.ChkDefectos = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DGrFacRen = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.DGrFacImp = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.DGrFacCuo = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.DGrFonEnc = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.DGrFonRen = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.DGrResult = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.DGrFacRen = new Facturacion.ADODBDataGridView();
+            this.DGrFacImp = new Facturacion.ADODBDataGridView();
+            this.DGrFacCuo = new Facturacion.ADODBDataGridView();
+            this.DGrFonEnc = new Facturacion.ADODBDataGridView();
+            this.DGrFonRen = new Facturacion.ADODBDataGridView();
+            this.DGrResult = new Facturacion.ADODBDataGridView();
             this.pannelLogon.SuspendLayout();
             this.panelFacturas.SuspendLayout();
             this.pannelOpciones.SuspendLayout();
@@ -75,16 +75,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacEnc)).BeginInit();
             this.panelEncOp.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGrResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -310,12 +310,13 @@
             // 
             // DGrFacEnc
             // 
+            this.DGrFacEnc.ADODBDataSource = null;
             this.DGrFacEnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGrFacEnc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGrFacEnc.Location = new System.Drawing.Point(3, 29);
             this.DGrFacEnc.Name = "DGrFacEnc";
             this.DGrFacEnc.Size = new System.Drawing.Size(930, 269);
-            this.DGrFacEnc.TabIndex = 4;
+            this.DGrFacEnc.TabIndex = 5;
             this.DGrFacEnc.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
             // 
             // panelEncOp
@@ -358,16 +359,6 @@
             this.tabPage2.Text = "Renglones";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // DGrFacRen
-            // 
-            this.DGrFacRen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGrFacRen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGrFacRen.Location = new System.Drawing.Point(0, 0);
-            this.DGrFacRen.Name = "DGrFacRen";
-            this.DGrFacRen.Size = new System.Drawing.Size(936, 301);
-            this.DGrFacRen.TabIndex = 1;
-            this.DGrFacRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.DGrFacImp);
@@ -377,16 +368,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Impuestos";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // DGrFacImp
-            // 
-            this.DGrFacImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGrFacImp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGrFacImp.Location = new System.Drawing.Point(0, 0);
-            this.DGrFacImp.Name = "DGrFacImp";
-            this.DGrFacImp.Size = new System.Drawing.Size(936, 301);
-            this.DGrFacImp.TabIndex = 1;
-            this.DGrFacImp.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
             // 
             // tabPage4
             // 
@@ -398,16 +379,6 @@
             this.tabPage4.Text = "Cuotas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // DGrFacCuo
-            // 
-            this.DGrFacCuo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGrFacCuo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGrFacCuo.Location = new System.Drawing.Point(0, 0);
-            this.DGrFacCuo.Name = "DGrFacCuo";
-            this.DGrFacCuo.Size = new System.Drawing.Size(936, 301);
-            this.DGrFacCuo.TabIndex = 1;
-            this.DGrFacCuo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.DGrFonEnc);
@@ -417,16 +388,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Fondos Enc.";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // DGrFonEnc
-            // 
-            this.DGrFonEnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGrFonEnc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGrFonEnc.Location = new System.Drawing.Point(0, 0);
-            this.DGrFonEnc.Name = "DGrFonEnc";
-            this.DGrFonEnc.Size = new System.Drawing.Size(936, 301);
-            this.DGrFonEnc.TabIndex = 1;
-            this.DGrFonEnc.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
             // 
             // tabPage6
             // 
@@ -438,16 +399,6 @@
             this.tabPage6.Text = "Fondos Ren.";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // DGrFonRen
-            // 
-            this.DGrFonRen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGrFonRen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGrFonRen.Location = new System.Drawing.Point(0, 0);
-            this.DGrFonRen.Name = "DGrFonRen";
-            this.DGrFonRen.Size = new System.Drawing.Size(936, 301);
-            this.DGrFonRen.TabIndex = 1;
-            this.DGrFonRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.DGrResult);
@@ -458,14 +409,70 @@
             this.tabPage7.Text = "Resultado";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // DGrFacRen
+            // 
+            this.DGrFacRen.ADODBDataSource = null;
+            this.DGrFacRen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGrFacRen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGrFacRen.Location = new System.Drawing.Point(0, 0);
+            this.DGrFacRen.Name = "DGrFacRen";
+            this.DGrFacRen.Size = new System.Drawing.Size(936, 301);
+            this.DGrFacRen.TabIndex = 0;
+            this.DGrFacRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // DGrFacImp
+            // 
+            this.DGrFacImp.ADODBDataSource = null;
+            this.DGrFacImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGrFacImp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGrFacImp.Location = new System.Drawing.Point(0, 0);
+            this.DGrFacImp.Name = "DGrFacImp";
+            this.DGrFacImp.Size = new System.Drawing.Size(936, 301);
+            this.DGrFacImp.TabIndex = 0;
+            this.DGrFacImp.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // DGrFacCuo
+            // 
+            this.DGrFacCuo.ADODBDataSource = null;
+            this.DGrFacCuo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGrFacCuo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGrFacCuo.Location = new System.Drawing.Point(0, 0);
+            this.DGrFacCuo.Name = "DGrFacCuo";
+            this.DGrFacCuo.Size = new System.Drawing.Size(936, 301);
+            this.DGrFacCuo.TabIndex = 0;
+            this.DGrFacCuo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // DGrFonEnc
+            // 
+            this.DGrFonEnc.ADODBDataSource = null;
+            this.DGrFonEnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGrFonEnc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGrFonEnc.Location = new System.Drawing.Point(0, 0);
+            this.DGrFonEnc.Name = "DGrFonEnc";
+            this.DGrFonEnc.Size = new System.Drawing.Size(936, 301);
+            this.DGrFonEnc.TabIndex = 0;
+            this.DGrFonEnc.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // DGrFonRen
+            // 
+            this.DGrFonRen.ADODBDataSource = null;
+            this.DGrFonRen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGrFonRen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGrFonRen.Location = new System.Drawing.Point(0, 0);
+            this.DGrFonRen.Name = "DGrFonRen";
+            this.DGrFonRen.Size = new System.Drawing.Size(936, 301);
+            this.DGrFonRen.TabIndex = 0;
+            this.DGrFonRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
             // DGrResult
             // 
+            this.DGrResult.ADODBDataSource = null;
             this.DGrResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGrResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGrResult.Location = new System.Drawing.Point(0, 0);
             this.DGrResult.Name = "DGrResult";
             this.DGrResult.Size = new System.Drawing.Size(936, 301);
-            this.DGrResult.TabIndex = 1;
+            this.DGrResult.TabIndex = 0;
             // 
             // Form1
             // 
@@ -488,16 +495,16 @@
             this.panelEncOp.ResumeLayout(false);
             this.panelEncOp.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).EndInit();
             this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGrResult)).EndInit();
             this.ResumeLayout(false);
 
@@ -519,15 +526,10 @@
         private System.Windows.Forms.TabControl SSTabFacturas;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView DGrFacImp;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView DGrFacCuo;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DataGridView DGrFonEnc;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView DGrFonRen;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.DataGridView DGrResult;
         private System.Windows.Forms.Panel pannelOpciones;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button CmdIngFacturas;
@@ -538,11 +540,16 @@
         private System.Windows.Forms.CheckBox ChkContado;
         private System.Windows.Forms.CheckBox ChkDefectos;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView DGrFacRen;
-        private System.Windows.Forms.DataGridView DGrFacEnc;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.LinkLabel linkAbout;
+        private ADODBDataGridView DGrFacEnc;
+        private ADODBDataGridView DGrFacRen;
+        private ADODBDataGridView DGrFacImp;
+        private ADODBDataGridView DGrFacCuo;
+        private ADODBDataGridView DGrFonEnc;
+        private ADODBDataGridView DGrFonRen;
+        private ADODBDataGridView DGrResult;
 
     }
 }

@@ -55,12 +55,12 @@ namespace Facturacion
         /// </summary>
         private void fillDataGrids()
         {
-            DGrFacEnc.DataSource = facturaData.dtFacEncabezado;
-            DGrFacRen.DataSource = facturaData.dtFacRenglones;
-            DGrFacImp.DataSource = facturaData.dtFacImpuestos;
-            DGrFacCuo.DataSource = facturaData.dtFacCuotas;
-            DGrFonEnc.DataSource = facturaData.dtFonEncabezado;
-            DGrFonRen.DataSource = facturaData.dtFonRenglones;
+            DGrFacEnc.ADODBDataSource = facturaData.rsFacEncabezado;
+            DGrFacRen.ADODBDataSource = facturaData.rsFacRenglones;
+            DGrFacImp.ADODBDataSource = facturaData.rsFacImpuestos;
+            DGrFacCuo.ADODBDataSource = facturaData.rsFacCuotas;
+            DGrFonEnc.ADODBDataSource = facturaData.rsFonEncabezado;
+            DGrFonRen.ADODBDataSource = facturaData.rsFonRenglones;
         }
 
         /// <summary>
@@ -150,12 +150,12 @@ namespace Facturacion
         {
             if (dataTouched)
             {
-                facturaData.dtFacEncabezado = DGrFacEnc.DataSource as DataTable;
-                facturaData.dtFacRenglones = DGrFacRen.DataSource as DataTable;
-                facturaData.dtFacImpuestos = DGrFacImp.DataSource as DataTable;
-                facturaData.dtFacCuotas = DGrFacCuo.DataSource as DataTable;
-                facturaData.dtFonEncabezado = DGrFonEnc.DataSource as DataTable;
-                facturaData.dtFonRenglones = DGrFonRen.DataSource as DataTable;
+                facturaData.rsFacEncabezado = DGrFacEnc.ADODBDataSource;
+                facturaData.rsFacRenglones = DGrFacRen.ADODBDataSource;
+                facturaData.rsFacImpuestos = DGrFacImp.ADODBDataSource;
+                facturaData.rsFacCuotas = DGrFacCuo.ADODBDataSource;
+                facturaData.rsFonEncabezado = DGrFonEnc.ADODBDataSource;
+                facturaData.rsFonRenglones = DGrFonRen.ADODBDataSource;
             }
             try
             {
@@ -246,12 +246,12 @@ namespace Facturacion
             {
                 if (dataTouched)
                 {
-                    facturaData.dtFacEncabezado = DGrFacEnc.DataSource as DataTable;
-                    facturaData.dtFacRenglones = DGrFacRen.DataSource as DataTable;
-                    facturaData.dtFacImpuestos = DGrFacImp.DataSource as DataTable;
-                    facturaData.dtFacCuotas = DGrFacCuo.DataSource as DataTable;
-                    facturaData.dtFonEncabezado = DGrFonEnc.DataSource as DataTable;
-                    facturaData.dtFonRenglones = DGrFonRen.DataSource as DataTable;
+                    facturaData.rsFacEncabezado = DGrFacEnc.ADODBDataSource;
+                    facturaData.rsFacRenglones = DGrFacRen.ADODBDataSource;
+                    facturaData.rsFacImpuestos = DGrFacImp.ADODBDataSource;
+                    facturaData.rsFacCuotas = DGrFacCuo.ADODBDataSource;
+                    facturaData.rsFonEncabezado = DGrFonEnc.ADODBDataSource;
+                    facturaData.rsFonRenglones = DGrFonRen.ADODBDataSource;
                 }
 
                 ADODB.Recordset report = null;
@@ -389,27 +389,9 @@ namespace Facturacion
         {
             dataTouched = true;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            loadDatos();
-            facturaData.rsFacEncabezado.AddNew(Type.Missing, Type.Missing);
-            facturaData.rsFacEncabezado.Fields["ID_Comp"].Value = 2;
-            facturaData.rsFacEncabezado.Update();
-            dataTouched = false;
-            saveDatos();
-            /*
-            loadDatos();
-            dataTouched = true;
-            saveDatos();
-             */
-
-        }
-
         private void linkAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new fAbout().ShowDialog();
+            new fAbout().ShowDialog();            
         }
 
 

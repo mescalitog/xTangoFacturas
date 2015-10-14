@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ADODBDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datos\ADODBDataGridView.Designer.cs">
+      <DependentUpon>ADODBDataGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Configuracion.cs" />
     <Compile Include="Datos\Commons.cs" />
     <Compile Include="Datos\xTangoAdapter.cs" />
@@ -101,6 +107,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Negocio\" />
     <Folder Include="Presentacion\images\" />
   </ItemGroup>
   <ItemGroup>
