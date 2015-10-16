@@ -1,18 +1,17 @@
-﻿using System;
+﻿using ADODB;
+using System;
+using System.Runtime.InteropServices;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System.Data;
-using System.Runtime.InteropServices;
 
 using System.Data.OleDb;
 
 using Facturacion.Configuracion;
 using Facturacion.Excepciones;
 using XTANGO_GV;
-
 
 namespace Facturacion.Datos
 {
@@ -166,23 +165,36 @@ namespace Facturacion.Datos
             return resultado;
         }
         public bool addFacturas(bool defectos, bool contado, xTangoFacturaData data, out ADODB.Recordset adoReporte) {
+            bool resultado = false;
             // Clase para el alta de comprobantes.
             XTANGO_GV.Comprobantes xComprobantes;
-            xComprobantes = (XTANGO_GV.Comprobantes)Activator.CreateInstance
-                (Type.GetTypeFromProgID("XTango_GV.Comprobantes"));
+            try
+            {                
+                xComprobantes = (XTANGO_GV.Comprobantes)Activator.CreateInstance
+                    (Type.GetTypeFromProgID("XTango_GV.Comprobantes"));
 
-            bool resultado = false;
-            object reporte = null;
+                object reporte = null;
 
-            if (contado) {
-                resultado = xComprobantes.Add_FacturaContado(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFonEncabezado as object, data.rsFonRenglones as object, defectos, ref reporte);
+                if (contado)
+                {
+                    resultado = xComprobantes.Add_FacturaContado(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFonEncabezado as object, data.rsFonRenglones as object, defectos, ref reporte);
+                }
+                else
+                {
+                    resultado = xComprobantes.Add_FacturaCtaCorriente(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFacCuotas as object, defectos, ref reporte);
+                }
+                // if (!resultado) { throw new XTangoException("Fallo al agregar facturas"); }
+
+                adoReporte = (ADODB.Recordset)reporte;
             }
-            else {
-                resultado = xComprobantes.Add_FacturaCtaCorriente(tangoLogOn, data.rsFacEncabezado as object, data.rsFacRenglones as object, data.rsFacImpuestos as object, data.rsFacCuotas as object, defectos, reporte);
+            catch (Exception ex)
+            {
+                throw new Excepciones.XTangoException("Error al agregar facturas: " + ex.Message);
             }
-            // if (!resultado) { throw new XTangoException("Fallo al agregar facturas"); }
+            finally {
+                xComprobantes = null;
+            }
 
-            adoReporte = (ADODB.Recordset)reporte;
             return resultado;
         }
     }        

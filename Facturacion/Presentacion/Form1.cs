@@ -55,12 +55,21 @@ namespace Facturacion
         /// </summary>
         private void fillDataGrids()
         {
-            DGrFacEnc.ADODBDataSource = facturaData.rsFacEncabezado;
-            DGrFacRen.ADODBDataSource = facturaData.rsFacRenglones;
-            DGrFacImp.ADODBDataSource = facturaData.rsFacImpuestos;
-            DGrFacCuo.ADODBDataSource = facturaData.rsFacCuotas;
-            DGrFonEnc.ADODBDataSource = facturaData.rsFonEncabezado;
-            DGrFonRen.ADODBDataSource = facturaData.rsFonRenglones;
+            try
+            {
+                DGrFacEnc.ADODBDataSource = facturaData.rsFacEncabezado;
+                DGrFacRen.ADODBDataSource = facturaData.rsFacRenglones;
+                DGrFacImp.ADODBDataSource = facturaData.rsFacImpuestos;
+                DGrFacCuo.ADODBDataSource = facturaData.rsFacCuotas;
+                DGrFonEnc.ADODBDataSource = facturaData.rsFonEncabezado;
+                DGrFonRen.ADODBDataSource = facturaData.rsFonRenglones;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio el error: " + ex.Message, "Facturacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -148,17 +157,18 @@ namespace Facturacion
         /// </summary>
         private void saveDatos()
         {
-            if (dataTouched)
-            {
-                facturaData.rsFacEncabezado = DGrFacEnc.ADODBDataSource;
-                facturaData.rsFacRenglones = DGrFacRen.ADODBDataSource;
-                facturaData.rsFacImpuestos = DGrFacImp.ADODBDataSource;
-                facturaData.rsFacCuotas = DGrFacCuo.ADODBDataSource;
-                facturaData.rsFonEncabezado = DGrFonEnc.ADODBDataSource;
-                facturaData.rsFonRenglones = DGrFonRen.ADODBDataSource;
-            }
             try
             {
+                if (dataTouched)
+                {
+                    facturaData.rsFacEncabezado = DGrFacEnc.ADODBDataSource;
+                    facturaData.rsFacRenglones = DGrFacRen.ADODBDataSource;
+                    facturaData.rsFacImpuestos = DGrFacImp.ADODBDataSource;
+                    facturaData.rsFacCuotas = DGrFacCuo.ADODBDataSource;
+                    facturaData.rsFonEncabezado = DGrFonEnc.ADODBDataSource;
+                    facturaData.rsFonRenglones = DGrFonRen.ADODBDataSource;
+                }
+
                 Commons.saveADORecordset(facturaData.rsFacEncabezado, mainpath + DEF_FacEnc);
                 Commons.saveADORecordset(facturaData.rsFacRenglones, mainpath + DEF_FacRen);
                 Commons.saveADORecordset(facturaData.rsFacImpuestos, mainpath + DEF_FacImp);

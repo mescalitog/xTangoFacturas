@@ -55,18 +55,18 @@
             this.ChkContado = new System.Windows.Forms.CheckBox();
             this.ChkDefectos = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.DGrFacRen = new Facturacion.ADODBDataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DGrFacImp = new Facturacion.ADODBDataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.DGrFacCuo = new Facturacion.ADODBDataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.DGrFonEnc = new Facturacion.ADODBDataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.DGrFonRen = new Facturacion.ADODBDataGridView();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.DGrResult = new Facturacion.ADODBDataGridView();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pannelLogon.SuspendLayout();
             this.panelFacturas.SuspendLayout();
             this.pannelOpciones.SuspendLayout();
@@ -75,16 +75,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacEnc)).BeginInit();
             this.panelEncOp.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).BeginInit();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).BeginInit();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGrResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -359,56 +359,6 @@
             this.tabPage2.Text = "Renglones";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.DGrFacImp);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(936, 301);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Impuestos";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.DGrFacCuo);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(936, 301);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Cuotas";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.DGrFonEnc);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(936, 301);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Fondos Enc.";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.DGrFonRen);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(936, 301);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Fondos Ren.";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.DGrResult);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(936, 301);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Resultado";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
             // DGrFacRen
             // 
             this.DGrFacRen.ADODBDataSource = null;
@@ -419,6 +369,16 @@
             this.DGrFacRen.Size = new System.Drawing.Size(936, 301);
             this.DGrFacRen.TabIndex = 0;
             this.DGrFacRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.DGrFacImp);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(936, 301);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Impuestos";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // DGrFacImp
             // 
@@ -431,6 +391,16 @@
             this.DGrFacImp.TabIndex = 0;
             this.DGrFacImp.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.DGrFacCuo);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(936, 301);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Cuotas";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // DGrFacCuo
             // 
             this.DGrFacCuo.ADODBDataSource = null;
@@ -441,6 +411,16 @@
             this.DGrFacCuo.Size = new System.Drawing.Size(936, 301);
             this.DGrFacCuo.TabIndex = 0;
             this.DGrFacCuo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.DGrFonEnc);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(936, 301);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Fondos Enc.";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // DGrFonEnc
             // 
@@ -453,6 +433,16 @@
             this.DGrFonEnc.TabIndex = 0;
             this.DGrFonEnc.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.DGrFonRen);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(936, 301);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Fondos Ren.";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // DGrFonRen
             // 
             this.DGrFonRen.ADODBDataSource = null;
@@ -463,6 +453,16 @@
             this.DGrFonRen.Size = new System.Drawing.Size(936, 301);
             this.DGrFonRen.TabIndex = 0;
             this.DGrFonRen.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataChanged);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.DGrResult);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(936, 301);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Resultado";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // DGrResult
             // 
@@ -495,16 +495,16 @@
             this.panelEncOp.ResumeLayout(false);
             this.panelEncOp.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacRen)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacImp)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrFacCuo)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrFonEnc)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrFonRen)).EndInit();
+            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGrResult)).EndInit();
             this.ResumeLayout(false);
 

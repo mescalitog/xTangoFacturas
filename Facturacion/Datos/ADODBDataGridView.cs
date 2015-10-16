@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADODB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,9 @@ namespace Facturacion
             ADODB.Fields adoFields = adoRs.Fields;
             System.Data.DataColumnCollection inColumns = inTable.Columns;
             //Delete
-            adoRs.MoveFirst();
+            if (adoRs.RecordCount > 0) { 
+                adoRs.MoveFirst(); 
+            }
             while (!adoRs.EOF)
             {
                 adoRs.Delete();
